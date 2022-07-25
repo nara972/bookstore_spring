@@ -1,4 +1,4 @@
-package com.nara.bookstore;
+package com.nara.bookstore.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
