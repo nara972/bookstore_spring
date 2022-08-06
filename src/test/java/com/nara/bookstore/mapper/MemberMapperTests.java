@@ -44,5 +44,18 @@ public class MemberMapperTests {
 		membermapper.idCheck(id);
 		membermapper.idCheck(id2);
 	}
+	
+	//로그인 쿼리 mapper 메서드 테스트
+	@Test
+	public void memberLogin() throws Exception{
+		
+		MemberVO member =new MemberVO(); // MemberVO 변수 선언 및 초기화
+		
+		member.setMemberId("test");
+		member.setMemberPw("test");
+		
+		membermapper.memberLogin(member);
+		System.out.println("결과 값 : " + membermapper.memberLogin(member));
+	}
 
 }
