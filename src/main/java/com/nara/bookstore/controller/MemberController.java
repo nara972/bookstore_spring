@@ -134,7 +134,7 @@ public class MemberController {
 	}
 	
 	/* 로그인 */
-	@RequestMapping(value="login", method=RequestMethod.POST)
+	@RequestMapping(value="login.do", method=RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request,MemberVO member,RedirectAttributes rttr) throws Exception{
 		
 		//System.out.println("login 메서드 진입");
