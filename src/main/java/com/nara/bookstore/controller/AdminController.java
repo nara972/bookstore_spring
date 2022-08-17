@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nara.bookstore.model.AuthorVO;
 import com.nara.bookstore.model.Criteria;
+import com.nara.bookstore.model.PageDTO;
 import com.nara.bookstore.service.AuthorService;
 
 @Controller
@@ -60,6 +61,16 @@ public class AdminController {
         List list = authorService.authorGetList(cri);
         
         model.addAttribute("list",list);
+        
+        /* 페이지 이동 인터페이스 데이터 */
+        int total = authorService.authorGetTotal(cri);
+        
+        PageDTO pageMaker = new PageDTO(cri, total);
+        
+        model.addAttribute("pageMaker", pageMaker);
+        
+        /* 페이지 이동 인터페이스 데이터 */
+        //model.addAttribute("pageMaker", new PageDTO(cri, authorService.authorGetTotal(cri)));
         
     }  
     
