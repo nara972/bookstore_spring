@@ -110,8 +110,10 @@
 		$(document).ready(function() {
 
 			let result = '<c:out value="${enroll_result}"/>';
+			let mresult = '<c:out value="${modify_result}"/>';
 
 			checkResult(result);
+			checkmResult(mresult);
 
 			function checkResult(result) {
 				if (result == '') {
@@ -120,6 +122,15 @@
 
 				alert("작가 '${enroll_result}'을 등록하였습니다.");
 
+			}
+			
+			function checkmResult(mresult){
+				
+				if(mresult =='1'){
+					alert("작가 정보 수정을 완료하였습니다.");
+				}else if(mresult =='0'){
+					alert("작가 정보 수정을 하지 못하였습니다.");
+				}
 			}
 
 		});
