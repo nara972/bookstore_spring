@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.nara.bookstore.mapper.AdminMapper;
 import com.nara.bookstore.model.BookVO;
 import com.nara.bookstore.model.CateVO;
+import com.nara.bookstore.model.Criteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -33,6 +34,18 @@ public class AdminServiceImpl implements AdminService{
 		
 		return adminMapper.cateList();
 		
+	}
+
+	@Override
+	public List<BookVO> goodsGetList(Criteria cri) {
+		log.info("goodsGetTotalList()..........");
+		return adminMapper.goodsGetList(cri);
+	}
+
+	@Override
+	public int goodsGetTotal(Criteria cri) {
+		log.info("goodsGetTotal().........");
+		return adminMapper.goodsGetTotal(cri);
 	}
 
 }
